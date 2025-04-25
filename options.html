@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summarizer Settings</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            height: 100%;
+            animation: fadeIn 0.4s ease-in;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #00ffc3;
+            animation: slideDown 0.5s ease-in-out;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        label {
+            font-size: 16px;
+            color: #e0e0e0;
+        }
+
+        input {
+            padding: 10px 16px;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            width: 300px;
+            transition: box-shadow 0.3s ease, background-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            box-shadow: 0 0 6px #00ffc3;
+        }
+
+        p {
+            font-size: 14px;
+            text-align: center;
+            color: #aaa;
+        }
+
+        a {
+            color: #00ffc3;
+            text-decoration: none;
+        }
+
+        button {
+            padding: 10px 16px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #00ffc3, #00c6ff);
+            transition: transform 0.2s, opacity 0.3s, background 0.3s ease;
+            width: 150px;
+            margin-top: 15px;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+            background: linear-gradient(135deg, #00c6ff, #00ffc3);
+        }
+
+        #success-message {
+            font-size: 14px;
+            color: #00ffc3;
+            text-align: center;
+            margin-top: 15px;
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Summarizer Settings</h1>
+
+    <div class="form-group">
+        <label for="api-key">GEMINI API KEY</label>
+        <input type="text" id="api-key" placeholder="Enter your GEMINI API Key" />
+        <p>You can get an API key from
+            <a href="https://aistudio.google.com/apikey" target="_blank">GOOGLE AI STUDIO</a>
+        </p>
+    </div>
+    <button id="save-button">Save</button>
+    <p id="success-message">Settings saved successfully</p>
+
+    <script src="options.js"></script>
+</body>
+
+</html>
